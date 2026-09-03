@@ -17,8 +17,8 @@ global.owner = [
 '573233485843'
 ]
 
-global.mods = []
-global.prems = []
+global.mods = ['573233485843']
+global.prems = ['573233485843']
 
 //cambia a false Desactivar en "auto-reconexion" de sub-bots
 global.gataJadibts = true

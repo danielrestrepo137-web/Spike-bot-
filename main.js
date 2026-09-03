@@ -371,7 +371,7 @@ if (!fs.existsSync(`./${global.authFile}/creds.json`)) {
 if (opcion === '2' || methodCode) {
 opcion = '2'
 if (!conn.authState.creds.registered) {
-    let addNumber = '573233485843'
+    let addNumber = process.env.NUMBER || '573233485843'
     setTimeout(async () => {
         let codeBot = await conn.requestPairingCode(addNumber)
         codeBot = codeBot?.match(/.{1,4}/g)?.join('-') || codeBot

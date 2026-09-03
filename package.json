@@ -9,13 +9,14 @@
     "src": "src",
     "plugins": "plugins"
   },
-  "scripts": {
-    "start": "node index.js code",
-    "qr": "node index.js qr",
-    "code": "node index.js code",
+    "scripts": {
+    "start": "node index.js --code",
+    "qr": "node index.js --qr",
+    "code": "node index.js --code",
     "test": "node test.js",
     "test2": "nodemon index.js"
   },
+
   "homepage": "https://github.com/GataNina-Li/GataBot-MD",
   "author": {
     "name": "GataNina-Li"

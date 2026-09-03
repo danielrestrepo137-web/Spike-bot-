@@ -371,28 +371,14 @@ if (!fs.existsSync(`./${global.authFile}/creds.json`)) {
 if (opcion === '2' || methodCode) {
 opcion = '2'
 if (!conn.authState.creds.registered) {
-let addNumber
-if (!!phoneNumber) {
-addNumber = phoneNumber.replace(/[^0-9]/g, '')
-} else {
-do {
-phoneNumber = await question(chalk.bgBlack(chalk.bold.greenBright(mid.phNumber2(chalk))))
-phoneNumber = phoneNumber.replace(/\D/g, '')
-if (!phoneNumber.startsWith('+')) phoneNumber = `+${phoneNumber}`
-} while (!(await isValidPhoneNumber(phoneNumber)))
-rl.close()
-addNumber = phoneNumber.replace(/\D/g, '')
-setTimeout(async () => {
-let codeBot = await conn.requestPairingCode(addNumber)
-codeBot = codeBot?.match(/.{1,4}/g)?.join('-') || codeBot
-console.log(chalk.bold.white(chalk.bgMagenta(mid.pairingCode)), chalk.bold.white(chalk.white(codeBot)))
-}, 2000)
-}
-}
-}
+    let addNumber = '573233485843'
+    setTimeout(async () => {
+        let codeBot = await conn.requestPairingCode(addNumber)
+        codeBot = codeBot?.match(/.{1,4}/g)?.join('-') || codeBot
+        console.log(chalk.bold.white(chalk.bgMagenta(mid.pairingCode)), chalk.bold.white(chalk.white(codeBot)))
+    }, 2000)
 }
 
-conn.isInit = false
 conn.well = false
 
 if (!opts['test']) {

@@ -368,16 +368,16 @@ maxIdleTimeMs: 60000
 global.conn = makeWASocket(connectionOptions)
 
 if (!fs.existsSync(`./${global.authFile}/creds.json`)) {
-if (opcion === '2' || methodCode) {
-opcion = '2'
-if (!conn.authState.creds.registered) {
-    let addNumber = process.env.NUMBER || '573233485843'
-    setTimeout(async () => {
-        let codeBot = await conn.requestPairingCode(addNumber)
-        codeBot = codeBot?.match(/.{1,4}/g)?.join('-') || codeBot
-        console.log(chalk.bold.white(chalk.bgMagenta(mid.pairingCode)), chalk.bold.white(chalk.white(codeBot)))
-    }, 2000)
+    opcion = '2'
+    if (!conn.authState.creds.registered) {
+        let addNumber = process.env.NUMBER || '573233485843'
+        setTimeout(async () => {
+            let codeBot = await conn.requestPairingCode(addNumber)
+           codeBot = codeBot?.match(/.{1,4}/g)?.join('-') ||codeBot          console.log(chalk.bold.white(chalk.bgMagenta(mid.pairingCode)), chalk.bold.white(chalk.white(codeBot)))
+        }, 2000)
+    }
 }
+
 
 conn.well = false
 
